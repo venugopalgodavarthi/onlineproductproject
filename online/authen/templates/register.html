@@ -1,0 +1,72 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Signup</title>
+    <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/signin.css'%}" rel="stylesheet" type="text/css">
+  
+  {% include 'partials/bootcss.html' %}
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form method="post">
+    {% csrf_token %}
+    <img class="mb-4" src="{% static 'images/signup.jfif' %}" alt="" width="72" height="57">
+    <h1 class="h2 mb-2 fw-normal">Please sign up</h1>
+    <div class="form-floating">
+     {{form.username|as_crispy_field}}
+    </div>
+    <div class="form-floating">
+      {{form.first_name|as_crispy_field}}
+    </div>
+    <div class="form-floating">
+      {{form.last_name|as_crispy_field}}
+     </div>
+     <div class="form-floating">
+      {{form.password|as_crispy_field}}
+    </div>
+     <div class="form-floating">
+       {{form.age|as_crispy_field}}
+     </div>
+     <div class="form-floating">
+      {{form.gender|as_crispy_field}}
+     </div>
+     <div class="form-floating">
+       {{form.email|as_crispy_field}}
+     </div>
+     <div class="form-floating">
+      {{form.phone|as_crispy_field}}
+    </div>
+    <div class="form-floating">
+      {{form.address|as_crispy_field}}
+    </div>
+    <br>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+  </form>
+</main>
+  </body>
+</html>
